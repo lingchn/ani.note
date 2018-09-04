@@ -2,6 +2,11 @@ settings:
   legacy:
     force: false
     interval: 0s
+server:
+    status: false               // server status
+    open: false                 // open browser at start
+    host: localhost             // server host
+    port: 9001                  // server port
 schema:
 - name: ani.note
   path: .
@@ -15,3 +20,13 @@ schema:
     - .git
     - .realize
     - vendor
+- name: server
+  path: ./server
+  commands:
+    run:
+      status: true
+  watcher:
+    paths:
+    - /
+    extensions:
+    - go
